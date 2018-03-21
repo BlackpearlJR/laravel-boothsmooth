@@ -1,33 +1,35 @@
 // HELPCLASS
-$gutters: 
-    (mt, margin-top),
-    (mr, margin-right),
-    (mb, margin-bottom),
-    (ml, margin-left),
-    (pt, padding-top),
-    (pr, padding-right),
-    (pb, padding-bottom),
-    (pl, padding-left);
-@each $gutterName, $gutterAttr in $gutters{
-	@include gutter($gutterName, $gutterAttr);
+$gutters : (mt, margin-top),
+(mr, margin-right),
+(mb, margin-bottom),
+(ml, margin-left),
+(pt, padding-top),
+(pr, padding-right),
+(pb, padding-bottom),
+(pl, padding-left);
+@each $gutterName,
+$gutterAttr in $gutters {
+  @include gutter($gutterName, $gutterAttr);
 }
 
-@for $i from 1 through 60{
-	.font-size-#{$i} {
-		font-size: $i * 1px !important;
-	}
+@for $i from 1 through 60 {
+  .font-size-#{$i} {
+    font-size: $i * 1px !important;
+  }
 }
 
 // Custom
+.navbar {
+  margin-bottom: 0px;
+}
 
-
-.navbar-primary{
-    background-color: $primary;
+.navbar-primary {
+  background-color: $primary;
+  color: $white;
+  a {
     color: $white;
-    a{
-        color: $white;
-        &:hover{
-            background-color: transparent;
-        }
+    &:hover {
+      background-color: transparent;
     }
+  }
 }

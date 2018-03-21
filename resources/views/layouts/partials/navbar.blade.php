@@ -25,9 +25,12 @@
       <!-- Right Side Of Navbar -->
       <ul class="nav navbar-nav navbar-right">
         <!-- Authentication Links -->
+        <li>
+          <a href="{{ route('todo') }}">Todo</a>
+        </li>
         @auth
           <li>
-            <a href="{{ url('/home') }}">Home</a>
+            <a href="{{ route('home') }}">Home</a>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
