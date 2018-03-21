@@ -1,9 +1,12 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
+// Style pattern
+@import 'fonts';
+@import 'colors';
 @import "variables";
+@import 'mixin/_helpclass';
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+//Vendors
+@import "fontawesome";
+@import "bootstrap";
+
+// CUSTOM
+@import "global";

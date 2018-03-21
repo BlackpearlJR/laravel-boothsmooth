@@ -1,0 +1,72 @@
+$font_path: "../fonts" !default;
+
+$prompt_family_name: 'Prompt';
+$theme_prompt: 'prompt';
+$prompt_fonts: 
+    (100, 'thin'),
+    (200, 'extralight'),
+    (300, 'light'),
+    (400, 'regular'),
+    (500, 'medium'),
+    (600, 'semibold'),
+    (700, 'bold'),
+    (800, 'extrabold'),
+    (900, 'black');
+
+@each $font_weight, $file_name in $prompt_fonts {
+    @font-face {
+        font-family: #{$prompt_family_name};
+        font-style: normal;
+        font-weight: #{$font_weight};
+    
+        src: url('#{$font_path}/#{$theme_prompt}/#{$theme_prompt}-#{$file_name}.eot');
+        src: url('#{$font_path}/#{$theme_prompt}/#{$theme_prompt}-#{$file_name}.eot?#iefix') format('embedded-opentype'),
+             url('#{$font_path}/#{$theme_prompt}/#{$theme_prompt}-#{$file_name}.woff2') format('woff2'),
+             url('#{$font_path}/#{$theme_prompt}/#{$theme_prompt}-#{$file_name}.woff') format('woff'),
+             url('#{$font_path}/#{$theme_prompt}/#{$theme_prompt}-#{$file_name}.ttf') format('truetype'),
+             url('#{$font_path}/#{$theme_prompt}/#{$theme_prompt}-#{$file_name}.svg##{$theme_prompt}#{$file_name}') format('svg');
+    }
+}
+
+$mitr_family_name: 'Mitr';
+$theme_mitr: 'mitr';
+$mitr_fonts: 
+    (200, 'extralight'),
+    (300, 'light'),
+    (400, 'regular'),
+    (500, 'medium'),
+    (600, 'semibold'),
+    (700, 'bold');
+@each $font_weight, $file_name in $mitr_fonts {
+    @font-face {
+        font-family: #{$mitr_family_name};
+        font-style: normal;
+        font-weight: #{$font_weight};
+    
+        src: url('#{$font_path}/#{$theme_mitr}/#{$theme_mitr}-#{$file_name}.eot');
+        src: url('#{$font_path}/#{$theme_mitr}/#{$theme_mitr}-#{$file_name}.eot?#iefix') format('embedded-opentype'),
+                url('#{$font_path}/#{$theme_mitr}/#{$theme_mitr}-#{$file_name}.woff2') format('woff2'),
+                url('#{$font_path}/#{$theme_mitr}/#{$theme_mitr}-#{$file_name}.woff') format('woff'),
+                url('#{$font_path}/#{$theme_mitr}/#{$theme_mitr}-#{$file_name}.ttf') format('truetype'),
+                url('#{$font_path}/#{$theme_mitr}/#{$theme_mitr}-#{$file_name}.svg##{$theme_mitr}#{$file_name}') format('svg');
+    }
+}
+
+$sarabun_family_name: 'TH Sarabun New';
+$theme_sarabun: 'thsarabunnew';
+$sarabun_fonts: 
+    ('normal', 'regular'),
+    ('bold', 'bold');
+@each $font_weight, $file_name in $sarabun_fonts {
+    @font-face {
+        font-family: #{$sarabun_family_name};
+        font-style: normal;
+        font-weight: #{$font_weight};
+    
+        src: url('#{$font_path}/#{$theme_sarabun}/#{$theme_sarabun}_#{$file_name}-webfont.eot');
+        src: url('#{$font_path}/#{$theme_sarabun}/#{$theme_sarabun}_#{$file_name}-webfont.eot?#iefix') format('embedded-opentype'),
+            url('#{$font_path}/#{$theme_sarabun}/#{$theme_sarabun}_#{$file_name}-webfont.woff') format('woff'),
+            url('#{$font_path}/#{$theme_sarabun}/#{$theme_sarabun}_#{$file_name}-webfont.ttf') format('truetype')
+    }
+}
+

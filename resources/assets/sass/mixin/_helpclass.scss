@@ -1,0 +1,125 @@
+@mixin gutter($name, $att){
+	@for $i from 0 through 12{
+		.#{$name}-#{$i * 5} {
+			#{$att}: $i * 5px !important;
+		}
+	}
+}
+@mixin circle($size){
+	display: inline-block;
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+}
+@mixin sqare($size){
+	display: inline-block;
+	width: $size;
+	height: $size;
+}
+@mixin transition ($val){
+	-webkit-transition: $val;
+       -moz-transition: $val;
+        -ms-transition: $val;
+            transition: $val;
+}
+
+@mixin transform ($val){
+	-webkit-transform: $val;
+       -moz-transform: $val;
+        -ms-transform: $val;
+            transform: $val;
+}
+
+@mixin placeholder($color){
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&::-moz-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+}
+
+@mixin text-help($name, $color){
+	.text-#{$name} {
+		color: $color !important;
+	}
+}
+@mixin triangle-down($size, $color){
+	width: $size;
+	height: $size;
+	border-left: #{$size * 0.7} solid transparent;
+	border-right: #{$size * 0.7} solid transparent;
+	border-top: #{$size} solid $color;
+}
+@mixin triangle-up($size, $color){
+	width: $size;
+	height: $size;
+	border-left: #{$size * 0.7} solid transparent;
+	border-right: #{$size * 0.7} solid transparent;
+	border-bottom: #{$size} solid $color;
+}
+
+
+@mixin scrollbarVertical($width, $scroll_bg, $scroll_color){
+	&::-webkit-scrollbar-track{
+		border-radius: #{$width / 2};
+		background-color: #{$scroll_bg};
+	}
+
+	&::-webkit-scrollbar{
+		width: #{$width};
+		background-color: #{$scroll_bg};
+	}
+
+	&::-webkit-scrollbar-thumb{
+		border-radius: #{$width / 2};
+		background-color: #{$scroll_color};
+	}
+}
+
+@mixin text-ellipsis($line){
+	display: block;
+	display: -webkit-box;
+	-webkit-line-clamp:#{$line};
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-word;
+}
+
+%remove-spinner{
+	&::-webkit-inner-spin-button, 
+	&::-webkit-outer-spin-button { 
+		-webkit-appearance: none; 
+		-moz-appearance: none; 
+		-ms-appearance: none; 
+		-o-appearance: none; 
+		margin: 0; 
+	}
+}
+
+%delay{
+	@include transition($delay);
+}
+
+%clearfix{
+	&:before, &:after{
+		content: " ";
+		display: table;
+	}
+}
+
+@mixin background_gradient($deg, $bg1, $bg2){
+	background: $bg1;
+    background: -webkit-linear-gradient($deg, $bg1 0%,  $bg2 96%);
+    background: -moz-linear-gradient($deg, $bg1 0%,  $bg2 96%);
+    background: -ms-linear-gradient($deg, $bg1 0%,  $bg2 96%);
+    background: -o-linear-gradient($deg, $bg1 0%,  $bg2 96%);
+    background: linear-gradient($deg, $bg1 0%,  $bg2 96%);
+}
